@@ -1,0 +1,299 @@
+ <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <title> Clean Up the Beach</title>
+            <link rel="icon" href="Images/lyc.png" type="image/gif" sizes="16x16">
+
+   
+
+
+ <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300|Quicksand:400,700|Roboto:300' rel='stylesheet' type='text/css'> 
+
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="skeleton.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+<script> 
+
+jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+	var slideCount = $('#slider ul li').length;
+	var slideWidth = $('#slider ul li').width();
+	var slideHeight = $('#slider ul li').height();
+	var sliderUlWidth = slideCount * slideWidth;
+	
+	$('#slider').css({ width: slideWidth, height: slideHeight });
+	
+	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+});    
+
+
+
+</script>
+
+
+
+
+</head>
+
+
+<!-- Header
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<body class= "learnpage">
+
+<header> 
+    
+            
+                <div class="nav">
+
+
+<div id="headerwrap">
+<div id="logo">
+<img src="images/lyc.png" height="30px"/>
+</div>
+
+
+<div id="logo">
+<img src="images/council.png" height="30px"/>
+ </div>
+                          <ul>
+                            
+                            <li class="tutorials"><a href="learn.html">Get Involved </a></li>
+                            <li class="about"><a href="resources.html">Resources </a></li>
+                            <li class="news"><a href="about.html">About</a></li>
+                              <li class="home"><a href="index.html">Home</a></li>
+                          </ul>
+                    </div>
+
+	</div>
+<div id="headerwrap2"> 
+
+    
+            
+                <div class="nav">
+
+					<div id="logo">
+						<img src="images/lyc.png" height="30px"/>
+					</div>
+
+<div id="logo">
+<img src="images/council.png" height="30px"/>
+ </div>
+                          	<ul>
+								<li class="tutorials"><a href="learn.html">Get Involved </a></li>
+								<li class="about"><a href="resources.html">Resources </a></li>
+								<li class="news"><a href="about.html">About</a></li>
+								  <li class="home"><a href="index.html">Home</a></li>
+                          	</ul>
+                 </div>
+
+	</div>
+</header>
+
+<!--- Content --------------------->
+
+<div class="container"> 
+<div id="eventcontent"> 
+    <div class="twelve columns">
+        <img src="images/events.png" height= 100px>
+    </div>
+
+    <div class="twelve columns">
+        <p> Beach Clean-ups are a great way to learn about the issue while being part of the solution. Organise your own clean-up through our free Love your Coast site. We have reusable sacks and gloves that non-profits and educational institutions can borrow for free.</p>
+    </div>
+
+
+
+<!--- slider ---> 
+
+<div id="slider">
+  <a href="javascript://" class="control_next"> > </a>
+  <a href="javascript://" class="control_prev"> < </a>
+  <ul>
+    
+    <li style="background: #eeeeee;"><img src="images/polaroid1.png" height="100%"></li>
+   <li style="background: #eeeeee;"><img src="images/polaroid2.png" height="100%"></li>
+    <li style="background: #eeeeee;"><img src="images/polaroid3.png" height="100%"></li>
+  </ul>  
+</div>
+
+
+
+
+
+</div>
+</div>
+<!------------------- Drop down ------------>
+
+<div id="flip">Create an Event</div>
+<div id="panel"> <h3>Create your own beach clean-up event</h3>
+
+<div id="formthing">
+
+  <form action=learn.html>
+<div class="twelve columns"> 
+    Full name :
+    <input type="text" id="fname" name="firstname">
+      </div>
+
+
+<div class="twelve columns"> 
+    Email Address : 
+    <input type="text" id="lname" name="lastname">
+    </div>
+
+<div class="twelve columns"> 
+    
+    
+<div id="beach"> 
+Beach:
+<select id="beach" name="beach">
+      <option value="lyall">Lyall Bay</option>
+      <option value="oriental">Oriental Bay</option>
+      <option value="scortching">Scortching Bay</option>
+        <option value="island">Island Bay</option>
+        <option value="Shelley">Shelley Bay</option>
+    </select>
+    </div>
+      </div>
+<div id ="date"> 
+<div class="three columns"> 
+Date : 
+  <input type="date" name="bday">
+</div>
+      </div>
+
+<div class="three columns">
+<div id="time"> 
+Time : 
+<input type="time" name="usr_time">
+      </div>
+      </div>
+  
+    <input type="submit" name="submit" value="Click here to submit" id="submit" onclick="return confirm('Thank you for creating an event! You will see it here once it is approved!')" >
+
+  </form>
+</div> </div>
+
+
+
+	</div>
+</body>
+
+<!--- Footer --------------------->
+<footer> 
+    <div class="container">
+
+   
+<div class="four columns">
+<div id="brought">
+Brought to you by:
+</div>
+        </div>
+
+<div class="eight columns">
+<div id="titlebottom"> Who is behind Love your Coast?  </div>
+ </div>
+
+
+
+<div id="lycpara">
+
+
+<div class="four columns"> 
+<div id="lycbottom">
+<img src="images/lyc.png" height="120px"/>
+    </div>
+
+
+
+
+    </div>
+        
+
+
+<div class="four columns"> 
+          
+
+<p>This project was started by a collaboration of New Zealand non-profit organisations, including Sustainable Coastlines, Keep New Zealand Beautiful, Sir Peter Blake Trust, Social Innovation and Watercare Harbour Clean-up Trust. 
+</p> </div>
+
+
+
+<div class="four columns"> 
+          
+
+<p> The ongoing maintenance of this website and the resources on it is administered by Sustainable Coastlines.
+</p> 
+
+<a href="http://www.facebook.com"> <img src="images/fb.png" height="50px"> </a>
+	<a href="http://www.twitter.com"> <img src="images/twitter.png" height="50px"> </a>
+	<a href="http://www.pinterest.com"><img src="images/pinterest.png" height="50px"> </a>
+
+    </div>
+        </div> <!---contentb--->     
+
+ 
+</div> <!---container--->
+
+
+	</footer>
+
+</html>

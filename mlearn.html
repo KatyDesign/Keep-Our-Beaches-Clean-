@@ -1,0 +1,230 @@
+ <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <title> Clean Up the Beach</title>
+            <link rel="icon" href="Images/lyc.png" type="image/gif" sizes="16x16">
+
+   
+
+
+ <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300|Quicksand:400,700|Roboto:300' rel='stylesheet' type='text/css'> 
+
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="mobilestyle.css" rel="stylesheet" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+<script> 
+
+jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+	var slideCount = $('#slider ul li').length;
+	var slideWidth = $('#slider ul li').width();
+	var slideHeight = $('#slider ul li').height();
+	var sliderUlWidth = slideCount * slideWidth;
+	
+	$('#slider').css({ width: slideWidth, height: slideHeight });
+	
+	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+});    
+
+
+
+</script>
+
+
+
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Clean up our beach </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Accordion with CSS3" />
+        <meta name="keywords" content="accordion, css3, sibling selector, radio buttons, input, pseudo class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        
+        <link rel="stylesheet" type="text/css" href="mobilestyle.css" />
+ 		<link rel="canonical" href="index.html">
+		
+		<script type="text/javascript" src="js/modernizr.custom.29473.js"></script>
+
+
+
+</head>
+
+
+<!------ NAV -------------->
+
+
+<body class="mlearn"> 
+
+<nav>
+
+<div id="logo"> 
+<img src="images/lyc.png" height="40px">
+</div>
+  
+  <label for="drop" class="toggle">  <img src="images/dropdownbutton.png" height="20px"> </label>
+  <input type="checkbox" id="drop" />
+  <ul class="menu">
+    <li><a href="Mobile.html">Home</a></li>
+    <li><a href="mabout.html">About</a></li>
+    <li><a href="mresources.html">Resources</a></li>
+    <li><a href="mlearn.html">Get Involved</a></li>
+   
+  </ul>
+	</nav>
+
+
+
+<!--- Content --------------------->
+
+
+<div id="picture">
+    
+        <img src="images/mevents.png" height= 100px>
+	</div>
+    
+<div id="eventcontent"> 
+   
+        <p> Beach Clean-ups are a great way to learn about the issue while being part of the solution. Organise your own clean-up through our free Love your Coast site. We have reusable sacks and gloves that non-profits and educational institutions can borrow for free.</p>
+    
+
+
+
+<!--- slider ---> 
+
+<div id="slider">
+  <a href="javascript://" class="control_next"> > </a>
+  <a href="javascript://" class="control_prev"> < </a>
+  <ul>
+    
+    <li style="background: #white;"><img src="images/polaroid1.png" height="100%"></li>
+    <li style="background: #white;"><img src="images/polaroid2.png" height="100%"></li>
+    <li style="background: #white;"><img src="images/polaroid3.png" height="100%"></li>
+  </ul>  
+</div>
+
+
+
+
+
+</div>
+
+<!------------------- Drop down ------------>
+
+<div id="flip">Create an Event</div>
+<div id="panel"> <h3>Create your own beach clean-up event</h3>
+
+<div id="formthing">
+
+  <form action=mlearn.html>
+<div class="twelve columns"> 
+    Full name :
+    <input type="text" id="fname" name="firstname">
+      </div>
+
+
+<div class="twelve columns"> 
+    Email Address : 
+    <input type="text" id="lname" name="lastname">
+    </div>
+
+<div class="twelve columns"> 
+    
+    
+<div id="beach"> 
+Beach:
+<select id="beach" name="beach">
+      <option value="lyall">Lyall Bay</option>
+      <option value="oriental">Oriental Bay</option>
+      <option value="scortching">Scortching Bay</option>
+        <option value="island">Island Bay</option>
+        <option value="Shelley">Shelley Bay</option>
+    </select>
+    </div>
+      </div>
+<div id ="date"> 
+<div class="three columns"> 
+Date : 
+  <input type="date" name="bday">
+</div>
+      </div>
+
+<div class="three columns">
+<div id="time"> 
+Time : 
+<input type="time" name="usr_time">
+      </div>
+      </div>
+  
+    <input type="submit" name="submit" value="Click here to submit" id="submit" onclick="return confirm('Thank you for creating an event! You will see it here once it is approved!')" >
+
+  </form>
+</div> </div>
+
+
+
+	</div>
+</body>
+
+<!--- Footer --------------------->
+<footer> 
+    
+	</footer>
+
+</html>
